@@ -1,5 +1,15 @@
 body {
     background-color: #222222;
+    margin: 0;
+}
+
+#fade {
+    position: fixed;
+    top: 0px;
+    width: 100%; 
+    height: 80px;
+    z-index: 9999;
+    opacity: .82;
 }
 
 .parallax { 
@@ -14,9 +24,45 @@ body {
     background-size: cover;
 }
 
-.parallax2 { 
+.parallaxBYO { 
     /* The image used */
     background-image: url(../images/tacos4.jpg);
+    /* Set a specific height */
+    height: 100%; 
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallaxCU { 
+    /* The image used */
+    background-image: url(../images/tacos5.jpg);
+    /* Set a specific height */
+    height: 100%; 
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallaxMENU { 
+    /* The image used */
+    background-image: url(../images/tacosHD.jpg);
+    /* Set a specific height */
+    height: 100%; 
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallaxLOCATIONS { 
+    /* The image used */
+    background-image: url(../images/skylineHD3.jpg);
     /* Set a specific height */
     height: 100%; 
     /* Create the parallax scrolling effect */
@@ -79,6 +125,7 @@ h3 {
 .a {
     padding: 10px;
     margin: 10% 20%;
+    text-align: center;
 }
 
 p {
@@ -129,6 +176,10 @@ p {
     width: 40%;
 }
 
+button#revSubmitBtn {
+    margin-left: 575px;
+}
+
 #centerButton {
     padding-left: 85px;
 }
@@ -161,11 +212,46 @@ div#contactPara{
     margin-top: 30px;
 }
 
-#reviewname, #feedback {
-    margin-left: 31%
+.profilePics {
+    height: 270px;
+    width: 200px;
+    border: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: white;
+}
+
+#reviewname {
+    margin-left: 31%;
+}
+
+#feedback {
+    margin-left: 28%;
+    text-align: center;
+    width: 150px;
+    height: 20px;
+}
+
+#feedbackBox {
+    margin: auto;
+    width: 498px;
+    height: 42px; 
 }
 
 #reviewnameBox{
     width: 500px;
     margin: auto;
+}
+
+.sigIng {
+    margin: auto;
+    color: white;
+    text-align: center;
+    width: 40%;
+}
+
+h4 {
+    color: white;
+    text-align: center;
+    text-decoration: underline;
 }

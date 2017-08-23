@@ -4,6 +4,7 @@ var express = require("express");
 var methodOverride = require("method-override");
 var bodyParser = require("body-parser");
 var handlebars = require('handlebars');
+var nodemailer = require('nodemailer');
 
 var app = express();
 

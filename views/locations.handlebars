@@ -1,0 +1,61 @@
+<div class="parallaxLOCATIONS" id="title" style="min-height: 500px;">
+
+  <h1 id='homeTitle'>Find Us</h1>
+
+</div>
+
+<div id="locations">
+<div class="a">
+  <h3>Locations</h3>
+  <form>
+  	<button id="submitDallas" type="submit" class="btn btn-default">Dallas</button>
+  	<button id="submitPlano" type="submit" class="btn btn-default">Plano</button>
+  	<button id="submitRockwall" type="submit" class="btn btn-default">Rockwall</button>
+  </form>
+  <br><br>
+
+<div id="dallas">
+  <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=1509mainst&key=AIzaSyCY41G4mQqQByZxe4OMYfM8lloLVc5Y7G8" allowfullscreen></iframe>
+  </div>
+
+  <iframe id="plano" width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=1402clarinetln&key=AIzaSyCY41G4mQqQByZxe4OMYfM8lloLVc5Y7G8" allowfullscreen></iframe>
+
+  <iframe id="rockwall" width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=2079summerleedr&key=AIzaSyCY41G4mQqQByZxe4OMYfM8lloLVc5Y7G8" allowfullscreen></iframe>
+
+ <script type="text/javascript">
+
+
+$(document).ready(function() {
+	$("#submitDallas").show();
+	$("#submitPlano").show();
+	$("#submitRockwall").show();
+	$("#dallas").hide();
+	$("#plano").hide();
+	$("#rockwall").hide();
+});
+
+$("#submitDallas").click(function(){
+	event.preventDefault();
+    $("#dallas").show();
+    $("#plano").hide();
+	$("#rockwall").hide();
+});
+
+$("#submitPlano").click(function(){
+	event.preventDefault();
+    $("#plano").show();
+    $("#dallas").hide();
+	$("#rockwall").hide();
+});
+
+$("#submitRockwall").click(function(){
+	event.preventDefault();
+    $("#rockwall").show();
+    $("#dallas").hide();
+	$("#plano").hide();
+});
+
+ </script>
+
+</div>
+</div>

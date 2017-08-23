@@ -1,8 +1,38 @@
 var db = require("../models");
+var nodemailer = require('nodemailer');
 
 module.exports = function(app) {
 
-   app.get("/", function(req, res) {
+    app.post("/email/:name/:email/:subject/:message", function(req, res) {
+        // sendMail(req.params.name, req.params.email, req.params.subject, req.params.message);
+        // create reusable transporter object using the default SMTP transport
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'eatbeforeyouspeak@gmail.com',
+            pass: 'SMUstudent2017'
+        }
+    });
+
+    // setup email data with unicode symbols
+    let mailOptions = {
+        from: '"EMAIL" <eatbeforeyouspeak@gmail.com>', // sender address
+        to: 'colindavidmcdonnell@gmail.com', // list of receivers
+        subject: req.params.subject, // Subject line
+        text: req.params.message // plain text body
+        // html: message // html body
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        //console.log('Message %s sent: %s', info.messageId, info.response);
+    });
+    });
+
+    app.get("/", function(req, res) {
         db.RoboTaco.findAll({}).then(function(results) {
             var hbsObject = {
                 tacos: results
@@ -11,7 +41,7 @@ module.exports = function(app) {
         });
     });
 
-   app.get("/Build-Your-Own", function(req, res) {
+    app.get("/Build-Your-Own", function(req, res) {
         db.RoboTaco.findAll({}).then(function(results) {
             var hbsObject = {
                 tacos: results
@@ -20,13 +50,13 @@ module.exports = function(app) {
         });
     });
 
-   app.get("/api/tacos", function(req, res) {
+    app.get("/api/tacos", function(req, res) {
         db.RoboTaco.findAll({}).then(function(results) {
             res.json(results);
         });
     });
 
-   app.get("/api/tacos/:id", function(req, res) {
+    app.get("/api/tacos/:id", function(req, res) {
         db.RoboTaco.findOne({
             where: {
                 id: req.params.id
@@ -36,7 +66,7 @@ module.exports = function(app) {
         });
     });
 
-   app.post("Build-Your-Own", function(req, res) {
+    app.post("Build-Your-Own", function(req, res) {
         db.RoboTaco.findAll({}).then(function(results) {
             var hbsObject = {
                 tacos: results
@@ -45,7 +75,7 @@ module.exports = function(app) {
         });
     });
 
-   app.post("review", function(req, res) {
+    app.post("review", function(req, res) {
     db.RoboTaco.findAll({}).then(function(results) {
         var hbsObject = {
 
@@ -53,7 +83,7 @@ module.exports = function(app) {
     })
    })
 
-   app.post("/api/tacos", function(req, res) {
+    app.post("/api/tacos", function(req, res) {
         db.RoboTaco.create({
             taco_name: req.body.taco_name,
             ingredients: req.body.ingredients,
@@ -63,7 +93,7 @@ module.exports = function(app) {
         });
     });
 
-   app.delete("/api/tacos/:id", function(req, res) {
+    app.delete("/api/tacos/:id", function(req, res) {
         db.RoboTaco.destroy({
             where: {
                 id: req.params.id
@@ -73,7 +103,7 @@ module.exports = function(app) {
         });
     });
 
-   app.put("/api/tacos", function(req, res) {
+    app.put("/api/tacos", function(req, res) {
         db.RoboTaco.update({
             taco_name: req.body.taco_name,
             ingredients: req.body.ingredients,
@@ -87,7 +117,7 @@ module.exports = function(app) {
         });
     });
 
-   app.get("/menu", function(req, res) {
+    app.get("/menu", function(req, res) {
         db.RoboTaco.findAll({}).then(function(results) {
             var hbsObject = {
                 robotacos: results

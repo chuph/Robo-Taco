@@ -1,5 +1,10 @@
-<div id="banner" style="height:600px; background-image: url(https://media.timeout.com/images/102890936/image.jpg);">
-<h4 id='homeTitle'>Contact Us</h4>
+<script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+
+<div class="parallaxCU" id="title" style="min-height: 500px;">
+
+    <h1 id='homeTitle'>Contact Us!</h1>
+
+</div>
 </div>
 <div id="contactPara">
 		<div class="a">
@@ -37,7 +42,20 @@
               <label style="color: white;" id="feedback" for="name">Feedback:</label>
               <input type="name" class="form-control" id="feedbackBox" placeholder="Please Leave Us A Review!" name="feedback">
             </div>
+            <button id="revSubmitBtn" type="submit" class="btn btn-default">Submit</button>
         </form>
 </div>
+
+<script type="text/javascript">
+
+$('#submitBtn').click(function(event) {
+	event.preventDefault();
+	alert('Email has been sent! Thank you!');
+	$.post('/email/' + $('#nameBox').val().trim() + '/' + $('#emailBox').val() + '/' + $('#subjectBox').val() + '/' + $('#messageBox').val(), function() {
+	});
+});
+
+
+</script>
 
 <div id="reviews"></div>
