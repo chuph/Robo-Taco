@@ -4,12 +4,12 @@ var db = require("../models");
 module.exports = function(app) {
 
    app.get("/", function(req, res) {
-        db.ingredients.findAll({}).then(function(results) {
-            var hbsObject = {
-                ingredients: results
-            }
-            res.render("index", hbsObject);
-        });
+        // db.reviews.findAll({}).then(function(results) {
+        //     var hbsObject = {
+        //         reviews: results
+        //     }
+            res.render("index");
+        // });
     });
 
    app.get("/Build-Your-Own", function(req, res) {
@@ -73,11 +73,33 @@ module.exports = function(app) {
     });
 
    app.get("/contact", function(req, res) {
-        res.render("contact");
+        // db.reviews.findAll({}).then(function(results) {
+        //     var hbsObject = {
+        //         reviews: results
+        //     }
+            res.render('contact');
+        // });
     });
+
+   app.post("/contact", function(req, res) {
+    db.reviews.create({
+        name: req.body.reviewname,
+        review: req.body.feedback
+    }).then(function(results) {
+        res.json(results);
+    });
+   });
 
    app.get("/locations", function(req, res) {
-        res.render("locations");
+        // db.reviews.findAll({}).then(function(results) {
+        //     var hbsObject = {
+        //         reviews: results
+        //     }
+            res.render('locations');
+        // })
     });
 
+
+
 };
+

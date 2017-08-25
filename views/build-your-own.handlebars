@@ -1,6 +1,6 @@
 <div class="parallaxBYO" id="title" style="min-height: 500px;">
 
-    <h1 id='homeTitle'>Build-a-Taco!</h1>
+    <h1 id='homeTitle'>Build-a-Taco</h1>
 
 </div>
 
@@ -9,6 +9,7 @@
 <div id="BYOwrap">
     <br>
     <br>
+    <div id="hideMe">
     <div>
         <div id="inline">        
             <p id="itemName">Tortillas</p>
@@ -19,10 +20,10 @@
             <div class="col-lg-6">
                 <div class="input-group">
                     <span class="input-group-addon">
-        <input type="checkbox" aria-label="Checkbox for following text input">
+        <input class="checkedBx" type="checkbox" aria-label="Checkbox for following text input">
       </span>
                     <input type="text" class="form-control" aria-label="Text input with checkbox" value={{this.item_name}} readonly>
-                    <input value={{this.price}} readonly>
+                    <input class="priceVal" value={{this.price}} readonly>
                 </div>
             </div>
         </div>
@@ -42,10 +43,10 @@
             <div class="col-lg-6">
                 <div class="input-group">
                     <span class="input-group-addon">
-        <input type="checkbox" aria-label="Checkbox for following text input">
+        <input class="checkedBx" type="checkbox" aria-label="Checkbox for following text input">
       </span>
                     <input type="text" class="form-control" aria-label="Text input with checkbox" value={{this.item_name}} readonly>
-                    <input value={{this.price}} readonly>
+                    <input class="priceVal" value={{this.price}} readonly>
                 </div>
             </div>
         </div>
@@ -66,10 +67,10 @@
             <div class="col-lg-6">
                 <div class="input-group">
                     <span class="input-group-addon">
-        <input type="checkbox" aria-label="Checkbox for following text input">
+        <input class="checkedBx" type="checkbox" aria-label="Checkbox for following text input">
       </span>
                     <input type="text" class="form-control" aria-label="Text input with checkbox" value={{this.item_name}} readonly>
-                    <input value={{this.price}} readonly>
+                    <input class="priceVal" value={{this.price}} readonly>
                 </div>
             </div>
         </div>
@@ -89,10 +90,10 @@
             <div class="col-lg-6">
                 <div class="input-group">
                     <span class="input-group-addon">
-        <input type="checkbox" aria-label="Checkbox for following text input">
+        <input class="checkedBx" type="checkbox" aria-label="Checkbox for following text input">
       </span>
                     <input type="text" class="form-control" aria-label="Text input with checkbox" value={{this.item_name}} readonly>
-                    <input value={{this.price}} readonly>
+                    <input class="priceVal" value={{this.price}} readonly>
                 </div>
             </div>
         </div>
@@ -112,10 +113,10 @@
             <div class="col-lg-6">
                 <div class="input-group">
                     <span class="input-group-addon">
-        <input type="checkbox" aria-label="Checkbox for following text input">
+        <input class="checkedBx" type="checkbox" aria-label="Checkbox for following text input">
       </span>
                     <input type="text" class="form-control" aria-label="Text input with checkbox" value={{this.item_name}} readonly>
-                    <input value={{this.price}} readonly>
+                    <input class="priceVal" value={{this.price}} readonly>
                 </div>
             </div>
         </div>
@@ -135,10 +136,10 @@
             <div class="col-lg-6">
                 <div class="input-group">
                     <span class="input-group-addon">
-        <input type="checkbox" aria-label="Checkbox for following text input">
+        <input class="checkedBx" type="checkbox" aria-label="Checkbox for following text input">
       </span>
                     <input type="text" class="form-control" aria-label="Text input with checkbox" value={{this.item_name}} readonly>
-                    <input value={{this.price}} readonly>
+                    <input class="priceVal" value={{this.price}} readonly>
                 </div>
             </div>
         </div>
@@ -158,18 +159,16 @@
                     <div class="col-lg-6">
                         <div class="input-group">
                             <span class="input-group-addon">
-        <input type="checkbox" aria-label="Checkbox for following text input">
+        <input class="checkedBx" type="checkbox" aria-label="Checkbox for following text input">
       </span>
                             <input type="text" class="form-control" aria-label="Text input with checkbox" value={{this.item_name}} readonly>
-                            <input value={{this.price}} readonly>
+                            <input class="priceVal" value={{this.price}} readonly>
                         </div>
                     </div>
                 </div>
                 {{/if_eq}} {{/each}}
     </div>
             
-
-
 
 
             <div>
@@ -183,16 +182,15 @@
                     <div class="col-lg-6">
                         <div class="input-group">
                             <span class="input-group-addon">
-        <input type="checkbox" aria-label="Checkbox for following text input">
+        <input class="checkedBx" type="checkbox" aria-label="Checkbox for following text input">
       </span>
                             <input type="text" class="form-control" aria-label="Text input with checkbox" value={{this.item_name}} readonly>
-                            <input value={{this.price}} readonly>
+                            <input class="priceVal" value={{this.price}} readonly>
                         </div>
                     </div>
                 </div>
                 {{/if_eq}} {{/each}}
             </div>
-
 
 
             <div>
@@ -206,10 +204,10 @@
                     <div class="col-lg-6">
                         <div class="input-group">
                             <span class="input-group-addon">
-        <input type="checkbox" aria-label="Checkbox for following text input">
+        <input class="checkedBx" type="checkbox" aria-label="Checkbox for following text input">
       </span>
                             <input type="text" class="form-control" aria-label="Text input with checkbox" value={{this.item_name}} readonly>
-                            <input value={{this.price}} readonly>
+                            <input class="priceVal" value={{this.price}} readonly>
                         </div>
                     </div>
                 </div>
@@ -217,7 +215,33 @@
             </div>
             <br>
             <div id="centerButton">
-            <input id="submitButton" type="submit">
+                <input id="submitButton" type="button" value="MAKE THAT TACO">
             </div>
+
             <br><br>
             </div>
+            </div>
+
+            <div id="total"></div>
+            
+            <script type="text/javascript">
+            var total = 0;
+            var element = document.getElementsByClassName('checkedBx');
+            var values = document.getElementsByClassName('priceVal');
+            $('#submitButton').on('click', function() {
+                event.preventDefault();
+                for (var i = 0; i < element.length; i++) {
+                    if (element[i].checked) {
+                    total += parseFloat(values[i].value);
+               }
+            }
+                $("#total").html('Total: $' + total);
+                console.log(total);
+                total = 0;
+                $("#hideMe").hide();
+                $("#total").show();
+            
+            });
+            </script>
+            
+

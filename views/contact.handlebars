@@ -2,7 +2,7 @@
 
 <div class="parallaxCU" id="title" style="min-height: 500px;">
 
-    <h1 id='homeTitle'>Contact Us!</h1>
+    <h1 id='homeTitle'>Contact Us</h1>
 
 </div>
 </div>
@@ -13,10 +13,6 @@
 		 	<div class="form-group">
 		      <label id="name" for="name">Name:</label>
 		      <input type="name" class="form-control" id="nameBox" placeholder="Enter Name" name="name">
-		    </div>
-		    <div class="form-group">
-		      <label id="email" for="email">Email:</label>
-		      <input type="email" class="form-control" id="emailBox" placeholder="Enter Email" name="email">
 		    </div>
 		   <div class="form-group">
 		      <label id="subject" for="subject">Subject:</label>
@@ -32,7 +28,7 @@
 	</div>
 
 	<div id="postReviews">
-    <h3>Lettuce know what you think!</h3>
+    <h3>Lettuce know what you think</h3>
         <form id="reviewForm">
             <div class="form-group">
               <label style="color: white;" id="reviewname" for="name">Name:</label>
@@ -53,9 +49,26 @@ $('#submitBtn').click(function(event) {
 	alert('Email has been sent! Thank you!');
 	$.post('/email/' + $('#nameBox').val().trim() + '/' + $('#emailBox').val() + '/' + $('#subjectBox').val() + '/' + $('#messageBox').val(), function() {
 	});
+	clearFields();
 });
 
 
 </script>
 
 <div id="reviews"></div>
+
+{{!-- <div class="content-slider">
+<div class="slider">
+<div class="mask">
+
+{{#each reviews}}
+{{#if_ls this.id 6}}
+	<li class="anim{{this.id}}">
+		<div class="quote">{{this.review}}</div>
+		<div class='source'>{{this.name}}</div>
+	</li>
+{{/each}}
+{{/if_ls}}
+
+</div>
+</div></div> --}}

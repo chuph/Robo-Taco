@@ -18,35 +18,66 @@
 </head>
 
 <body>
-
-    <div class="pos-f-t" id="fade">
-        <div id="navbarToggleExternalContent">
-            <div class="bg-dark p-4" id="links">
-                <a href="/" class="navLink"><span class="text-muted">About</span></a>
-                <a href="/contact" class="navLink"><span class="text-muted">Contact</span></a>
-                <a href="/locations" class="navLink"><span class="text-muted">Locations</span></a>
-                <a href="/menu" class="navLink"><span class="text-muted">Menu</span></a>
-                <a href="/Build-Your-Own" class="navLink"><span class="text-muted">Build-Your-Own</span></a>
+<header>
+        <div class="pos-f-t" id="fade">
+            <div id="navbarToggleExternalContent">
+                <div class="bg-dark p-4" id="links">
+                    <a href="/" class="navLink"><span class="text-muted">About</span></a>
+                    <a href="/contact" class="navLink"><span class="text-muted">Contact</span></a>
+                    <a href="/locations" class="navLink"><span class="text-muted">Locations</span></a>
+                    <a href="/menu" class="navLink"><span class="text-muted">Menu</span></a>
+                    <a href="/Build-Your-Own" class="navLink"><span class="text-muted">Build-Your-Own</span></a>
+                </div>
             </div>
         </div>
-    </div>
-   
+</header>
 
 <script type="text/javascript">
-(function($) {          
-    $(document).ready(function(){                    
-        $(window).scroll(function(){                          
-            if ($(this).scrollTop() > 200) {
-                $('#fade').fadeIn(10);
-            } else {
-                $('#fade').fadeOut(10);
-            }
-        });
-    });
-});
+    window.addEventListener("scroll", function() {
+    if (window.scrollY > 200) {
+        $('#fade').fadeOut(800);
+    }
+    else {
+        $('#fade').fadeIn(800);
+    }
+},false);
 </script>
 
     {{{ body }}}
+
+
+    <br><br>
+
+    <h1>Reviews</h1>
+
+    <div class="content-slider">
+      <div class="slider">
+        <div class="mask">
+          <ul>
+            <li class="anim1">
+              <div class="quote">I've eaten a lot of tacos and this is by far my favorite spot!</div>
+              <div class="source">- Sophie</div>
+            </li>
+            <li class="anim2">
+              <div class="quote">I used to hate tacos, but one bite of these tacos has me coming back every day for more!</div>
+              <div class="source">- Lilly</div>
+            </li>
+            <li class="anim3">
+              <div class="quote">Whether you're looking for a great taco or a tasty margarita, this should be your destination!</div>
+              <div class="source">- Sam</div>
+            </li>
+            <li class="anim4">
+              <div class="quote">Great spot for the family! Love the fresh ingredients!</div>
+              <div class="source">- Natalie</div>
+            </li>
+            <li class="anim5">
+              <div class="quote">MMMMMMM I love these tacos! Can't picture my life without them!</div>
+              <div class="source">- Matt</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
     <div id="end">
     <footer class="footer" id="foot">

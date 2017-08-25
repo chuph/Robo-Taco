@@ -29,30 +29,91 @@
 <div class="row aboutUs text-center">
 	<div class="col-md-3">
 		<h5>Brandon Fuller</h5>
-		<img class="profilePics" src="/images/brandon.jpg" alt="Brandon">
+		<h5 id="jobTitle">Chief Executive Officer</h5>
+		<img class="profilePics" id="clickB" src="/images/brandon.jpg" alt="Brandon">
 		<br>
-		<p class="about">This is Brandon</p>
+		<p class="about" id="aboutB">After graduating Texas A&M, Brandon travelled the world in search of the best taco and freshest ingredient, and so Taco-Bout-It was born. Besides running a multi-million dollar corportaion, Brandon farms bees in his spare time.</p>
 	</div>
 
 	<div class="col-md-3">
 		<h5>Colin McDonnell</h5>
-		<img class="profilePics" src="/images/colin2.jpg" alt="Colin">
+		<h5 id="jobTitle">Chief Financial Officer</h5>
+		<img class="profilePics" id="clickC" src="/images/colin3.jpg" alt="Colin">
 		<br>
-		<p class="about">This is Colin</p>
+		<p class="about" id="aboutC">Colin realized his love for numbers and tacos while his band was on tour just off the coast of Mexico. Brandon and Colin met during these travels and have dedicated their lives to bringing taco happiness to all. In his spare time, he watches Food Network. </p>
 	</div>
 	<div class="col-md-3">
 		<h5>Lauren Hutchinson</h5>
-		<img class="profilePics" src="/images/lauren.jpg" alt="Lauren">
+		<h5 id="jobTitle">Chief of Marketing</h5>
+		<img class="profilePics" id="clickL" src="/images/lauren.jpg" alt="Lauren">
 		<br>
-		<p class="about">This is Lauren</p>
+		<p class="about" id="aboutL">Currently a senior at SMU, Lauren brings fresh ideas of wait to reach out and spread taco cheer. Her innovative thinking the keeps doors and mouths opens. In her spare time, she collects feathers.</p>
 	</div>
 	<div class="col-md-3">
 		<h5>Phillip Chu</h5>
-		<img class="profilePics" src="/images/phillip.jpg" alt="Phillip">
+		<h5 id="jobTitle">Chief of Communications</h5>
+		<img class="profilePics" id="clickP" src="/images/phillip.jpg" alt="Phillip">
 		<br>
-		<p class="about">This is Phil</p>
+		<p class="about" id="aboutP">Phil loves people. After graduating from Texas A&M with Brandon, Phil knew he had to take his love for tacos and connecting with the community and put the two together. In his spare time, he runs a donut shop.</p>
 	</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+	$("#aboutB").hide();
+	$("#aboutC").hide();
+	$("#aboutL").hide();
+	$("#aboutP").hide();
+});
+
+	$("#clickB").click(function(){
+	event.preventDefault();
+    $("#aboutB").show();
+
+    $("#aboutC").hide();
+	$("#aboutL").hide();
+	$("#aboutP").hide();
+});
+
+	$("#clickC").click(function(){
+	event.preventDefault();
+    $("#aboutC").show();
+
+    $("#aboutB").hide();
+	$("#aboutL").hide();
+	$("#aboutP").hide();
+});
+
+	$("#clickL").click(function(){
+	event.preventDefault();
+    $("#aboutL").show();
+
+    $("#aboutC").hide();
+	$("#aboutB").hide();
+	$("#aboutP").hide();
+});
+
+	$("#clickP").click(function(){
+	event.preventDefault();
+    $("#aboutP").show();
+
+    $("#aboutC").hide();
+	$("#aboutL").hide();
+	$("#aboutB").hide();
+});
+</script>
+
+{{!-- {{#each reviews}}
+{{#if_ls this.id 6}}
+	<li class="anim{{this.id}}">
+		<div class="quote">{{this.review}}</div>
+		<div class='source'>{{this.name}}</div>
+	</li>
+{{/each}}
+{{/if_ls}}
+
+</div>
+</div></div> --}}
 
 

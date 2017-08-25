@@ -16,7 +16,7 @@ module.exports = function(app) {
 
     // setup email data with unicode symbols
     let mailOptions = {
-        from: '"EMAIL" <eatbeforeyouspeak@gmail.com>', // sender address
+        from: '"ContactMail" <eatbeforeyouspeak@gmail.com>', // sender address
         to: 'colindavidmcdonnell@gmail.com', // list of receivers
         subject: req.params.subject, // Subject line
         text: req.params.message // plain text body
@@ -118,14 +118,14 @@ module.exports = function(app) {
     });
 
     app.get("/menu", function(req, res) {
-        db.RoboTaco.findAll({}).then(function(results) {
-            var hbsObject = {
-                robotacos: results
-            };
-            res.render("menu", hbsObject);
-        }).catch(function(err){
-            console.log(err)
-        });
+        // db.reviews.findAll({}).then(function(results) {
+        //     var hbsObject = {
+        //         reviews: results
+        //     };
+            res.render("menu");
+        // }).catch(function(err){
+        //     console.log(err)
+        // });
     });
 
 };
